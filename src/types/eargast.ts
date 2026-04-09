@@ -18,3 +18,34 @@ export interface ErgastResponse {
     };
   };
 }
+
+export interface ErgastDriverStandingsResponse {
+  MRData: {
+    StandingsTable: {
+      StandingsLists: Array<{
+        DriverStandings: Array<{
+          position: string;
+          points: string;
+          wins: string;
+          Driver: { givenName: string; familyName: string };
+          Constructors: Array<{ name: string }>;
+        }>;
+      }>;
+    };
+  };
+}
+
+export interface ErgastConstructorStandingsResponse {
+  MRData: {
+    StandingsTable: {
+      StandingsLists: Array<{
+        ConstructorStandings: Array<{
+          position: string;
+          points: string;
+          wins: string;
+          Constructor: { name: string };
+        }>;
+      }>;
+    };
+  };
+}
