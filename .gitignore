@@ -1,3 +1,5 @@
 node_modules
 .kiro
 .env
+prisma/**/*.db
+prisma/**/*.db-journal

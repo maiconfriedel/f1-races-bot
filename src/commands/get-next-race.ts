@@ -14,7 +14,7 @@ function resolveTimezone(languageCode?: string): string {
   return tz ?? "UTC";
 }
 
-async function fetchRaces(): Promise<Race[]> {
+export async function fetchRaces(): Promise<Race[]> {
   const response = await fetch(
     "https://api.jolpi.ca/ergast/f1/current/races.json",
   );
