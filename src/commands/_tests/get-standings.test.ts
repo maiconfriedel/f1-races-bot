@@ -1,4 +1,4 @@
-import TelegramBot from "node-telegram-bot-api";
+import type TelegramBot from "node-telegram-bot-api";
 import { describe, expect, it, vi } from "vitest";
 import {
   formatConstructorStandings,
@@ -35,7 +35,11 @@ describe("registerStandingsCommand", () => {
 
     registerStandingsCommand(bot);
 
-    const [, callback] = onText.mock.calls[0]!;
+    const call = onText.mock.calls[0];
+    if (!call) {
+      throw new Error("Expected onText callback to be registered");
+    }
+    const [, callback] = call;
     const msg = { chat: { id: 42 } };
     await callback(msg);
 
@@ -102,7 +106,11 @@ describe("registerStandingsCommand", () => {
 
     registerStandingsCommand(bot);
 
-    const [, callback] = onText.mock.calls[0]!;
+    const call = onText.mock.calls[0];
+    if (!call) {
+      throw new Error("Expected onText callback to be registered");
+    }
+    const [, callback] = call;
     const msg = { chat: { id: 99 } };
     await callback(msg);
 

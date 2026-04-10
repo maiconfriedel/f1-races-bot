@@ -74,10 +74,24 @@ Quando iniciar corretamente, o bot começa em polling e registra os comandos e o
 npm test
 ```
 
+## Lint
+
+```bash
+npm run lint
+```
+
+Para corrigir automaticamente problemas suportados:
+
+```bash
+npm run lint:fix
+```
+
 ## Scripts úteis
 
 - `npm run dev`: inicia o bot com hot reload via `tsx watch`.
 - `npm test`: executa os testes com Vitest.
+- `npm run lint`: executa o lint com Biome.
+- `npm run lint:fix`: aplica correções automáticas do lint com Biome.
 - `npm run prisma:generate`: gera o client Prisma.
 - `npm run prisma:migrate`: cria/aplica migrações de desenvolvimento.
 - `npm run prisma:studio`: abre interface do Prisma Studio.

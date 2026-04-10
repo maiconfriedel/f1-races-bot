@@ -1,4 +1,4 @@
-import TelegramBot from "node-telegram-bot-api";
+import type TelegramBot from "node-telegram-bot-api";
 import { describe, expect, it, vi } from "vitest";
 import {
   registerSubscriptionCommands,
@@ -29,8 +29,11 @@ describe("registerSubscriptionCommands", () => {
 
     const handler = extractHandler(onText, "\\/subscribe");
     expect(handler).toBeDefined();
+    if (!handler) {
+      throw new Error("Expected /subscribe handler to be registered");
+    }
 
-    await handler!({ chat: { id: 101 } });
+    await handler({ chat: { id: 101 } });
 
     expect(repository.subscribe).toHaveBeenCalledWith(101);
     expect(sendMessage).toHaveBeenCalledWith(
@@ -56,8 +59,11 @@ describe("registerSubscriptionCommands", () => {
 
     const handler = extractHandler(onText, "\\/unsubscribe");
     expect(handler).toBeDefined();
+    if (!handler) {
+      throw new Error("Expected /unsubscribe handler to be registered");
+    }
 
-    await handler!({ chat: { id: 202 } });
+    await handler({ chat: { id: 202 } });
 
     expect(repository.unsubscribe).toHaveBeenCalledWith(202);
     expect(sendMessage).toHaveBeenCalledWith(
@@ -86,9 +92,12 @@ describe("registerSubscriptionCommands", () => {
 
     const handler = extractHandler(onText, "\\/subscriptions");
     expect(handler).toBeDefined();
+    if (!handler) {
+      throw new Error("Expected /subscriptions handler to be registered");
+    }
 
-    await handler!({ chat: { id: 303 } });
-    await handler!({ chat: { id: 303 } });
+    await handler({ chat: { id: 303 } });
+    await handler({ chat: { id: 303 } });
 
     expect(sendMessage).toHaveBeenNthCalledWith(
       1,

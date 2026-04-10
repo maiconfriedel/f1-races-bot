@@ -19,11 +19,19 @@ Recommended order for a fresh setup: install -> env -> prisma generate -> prisma
 ## Test and Focused Verification
 
 - Full tests: `npm test` (runs `vitest --run`).
+- Full lint: `npm run lint` (runs `biome lint .`).
+- Auto-fix lint: `npm run lint:fix` (runs `biome lint --write .`).
 - Single file: `npx vitest --run src/commands/_tests/get-next-race.test.ts`
 - Name filter: `npx vitest --run -t "runMondayPriorAlerts"`
 - Always create new tests in the corresponding `_tests/` folder near the module under test.
 
-There are no repo scripts for lint/typecheck/build; do not assume they exist.
+There are no repo scripts for typecheck/build; do not assume they exist.
+
+## Lint Gate (Required)
+
+- Always run `npm run lint` before finishing work.
+- Do not leave lint errors unresolved; fix all lint errors before handing off.
+- When adding or editing code, follow Biome lint patterns used in this repo (for example, prefer `import type` for type-only imports and avoid non-null assertions).
 
 ## Architecture Notes That Matter
 

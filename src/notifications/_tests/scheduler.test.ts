@@ -1,4 +1,4 @@
-import TelegramBot from "node-telegram-bot-api";
+import type TelegramBot from "node-telegram-bot-api";
 import { describe, expect, it, vi } from "vitest";
 import { runMondayPriorAlerts } from "../scheduler.js";
 

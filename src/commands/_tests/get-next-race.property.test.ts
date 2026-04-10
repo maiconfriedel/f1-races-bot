@@ -2,7 +2,7 @@
 
 import * as fc from "fast-check";
 import { describe, it } from "vitest";
-import { type Race } from "../../types/eargast.js";
+import type { Race } from "../../types/eargast.js";
 import { findNextRace, formatRaceMessage } from "../get-next-race.js";
 
 // Generates a date string "YYYY-MM-DD" between 2020-01-01 and 2030-12-31
