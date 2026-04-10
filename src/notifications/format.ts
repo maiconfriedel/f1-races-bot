@@ -1,5 +1,5 @@
-import dayjs from "dayjs";
 import type { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import type { Race } from "../types/eargast.js";
 

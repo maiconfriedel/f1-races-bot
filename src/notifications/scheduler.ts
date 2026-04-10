@@ -1,7 +1,7 @@
 import cron from "node-cron";
 import type TelegramBot from "node-telegram-bot-api";
-import { env } from "../env.js";
 import { fetchRaces, findNextRace } from "../commands/get-next-race.js";
+import { env } from "../env.js";
 import {
   prismaSubscriptionsRepository,
   type SubscriptionsRepository,
