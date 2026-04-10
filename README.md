@@ -80,7 +80,7 @@ npm test
 npm run lint
 ```
 
-Para corrigir automaticamente problemas suportados:
+Para corrigir automaticamente lint, formatação e imports:
 
 ```bash
 npm run lint:fix
@@ -90,8 +90,8 @@ npm run lint:fix
 
 - `npm run dev`: inicia o bot com hot reload via `tsx watch`.
 - `npm test`: executa os testes com Vitest.
-- `npm run lint`: executa o lint com Biome.
-- `npm run lint:fix`: aplica correções automáticas do lint com Biome.
+- `npm run lint`: executa lint, checagem de formatação e ordem de imports com Biome.
+- `npm run lint:fix`: aplica correções automáticas de lint, formatação e imports com Biome.
 - `npm run prisma:generate`: gera o client Prisma.
 - `npm run prisma:migrate`: cria/aplica migrações de desenvolvimento.
 - `npm run prisma:studio`: abre interface do Prisma Studio.

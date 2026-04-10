@@ -6,7 +6,7 @@ import { env } from "./env.js";
 import { startAlertsScheduler } from "./notifications/scheduler.js";
 
 const bot = new TelegramBot(env.TELEGRAM_API_TOKEN, {
-  polling: true,
+	polling: true,
 });
 
 registerNextRaceCommand(bot);
